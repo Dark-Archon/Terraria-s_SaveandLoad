@@ -7,12 +7,13 @@ if not exist "C:\Users\%username%\Documents\My Games\Terraria\TSLtemp" (
 )
 
 REM info
-echo Ì©À­ÈğÑÇS/L´ó·¨ V1.0
-echo ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-echo ¸üĞÂÈÕÖ¾:
-echo V1£º±¾Èí¼şµÚÒ»¸ö°æ±¾
-echo ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-echo ºÜÀ¬»øµÄĞ¡ÍæÒâ...
+echo æ³°æ‹‰ç‘äºšS/Lå¤§æ³• V1.1
+echo â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+echo æ›´æ–°æ—¥å¿—:
+echo V1.0ï¼šæœ¬è½¯ä»¶ç¬¬ä¸€ä¸ªç‰ˆæœ¬
+echo V1.1ï¼šä¿®å¤æ— æ³•é€€å‡ºbug
+echo â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+echo å¾ˆåƒåœ¾çš„å°ç©æ„...
 pause
 
 
@@ -20,29 +21,29 @@ pause
 cls
 cd Worlds
 dir "%cd%" /b
-echo (..)=ÍË³ö±¾³ÌĞò
-set /p chosen=ÊäÈëÎÄ¼şÃû(Ö§³Ötab)
-if chosen==.. exit
-title µ±Ç°ÎÄ¼ş:%chosen%
+echo (..)=é€€å‡ºæœ¬ç¨‹åº
+set /p chosen=è¾“å…¥æ–‡ä»¶å(æ”¯æŒtab)
+if %chosen%==.. exit
+title å½“å‰æ–‡ä»¶:%chosen%
 cd ..
 
 :loop
 cls
-echo µ±Ç°ÎÄ¼ş:%chosen%
-echo S:´æµµ(Save)
-echo L:¶Áµµ(Load)
-echo E:ÍË³ö(Exit)
+echo å½“å‰æ–‡ä»¶:%chosen%
+echo S:å­˜æ¡£(Save)
+echo L:è¯»æ¡£(Load)
+echo E:é€€å‡º(Exit)
 
-set /p command=²Ù×÷:
+set /p command=æ“ä½œ:
 if %command%==S (
 	copy /y "%cd%\Worlds\%chosen%" "%cd%\TSLtemp\%chosen%"
-	echo Íê³É
+	echo å®Œæˆ
 	pause
 	goto loop
 )
 if %command%==L (
 	copy /y "%cd%\TSLtemp\%chosen%" "%cd%\Worlds\%chosen%"
-	echo Íê³É
+	echo å®Œæˆ
 	pause
 	goto loop
 )
@@ -50,6 +51,6 @@ if %command%==E (
 	cls
 	goto filesure
 )
-echo ÄãÑ¡ÔñÁËÒ»¸ö²»´æÔÚµÄ´úºÅ!
+echo ä½ é€‰æ‹©äº†ä¸€ä¸ªä¸å­˜åœ¨çš„ä»£å·!
 pause
 goto loop
